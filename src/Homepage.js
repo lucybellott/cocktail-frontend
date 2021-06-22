@@ -14,7 +14,7 @@ function Homepage() {
     const newSearchCocktails  = drinks.filter(drink => {
   
        let ingredientsArray = drink.ingredients.filter(ingredientString => {
-         return ingredientString.includes(search) 
+         return ingredientString.toLowerCase().includes(search.toLowerCase()) 
       })
 
       return ingredientsArray.length > 0
