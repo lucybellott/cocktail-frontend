@@ -31,9 +31,6 @@ function AddCocktailForm() {
             Ingredients
           </label>
           <div>
-      <label for="inputAddress2" class="form-label">
-        Ingredients
-      </label>
       <input type="text" class="form-control" id="inputAddress2" />
     </div>
           <button
