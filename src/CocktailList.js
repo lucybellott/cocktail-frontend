@@ -13,7 +13,7 @@ export default function CocktailList({ drinks }) {
             <br />
         </>
     })
-
+console.log(drinks)
     return (
         <div className="container" style={{ marginTop: '20px' }}>
             <div className="row">

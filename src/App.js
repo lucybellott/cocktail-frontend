@@ -1,27 +1,21 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import NavBar from './NavBar'
-import CocktailList from './CocktailList'
-import Search from './Search'
+import Homepage from './Homepage';
+import {Switch, Route} from 'react-router-dom';
+import AddCocktailForm from './AddCocktailForm';
+import NavBar from './NavBar';
 
 
 function App() {
-  const [drinks, setDrinks] = useState([])
-  
-  useEffect(() => {
-    fetch('http://localhost:3000/drinks')
-    .then(resp => resp.json())
-    .then(data => setDrinks(data))
-
-  }, [])
   
   return (
-    <div className="App">
-      <NavBar />
-      <Search />
-      <CocktailList drinks={drinks} />
-
-    </div>
+    <>
+    <NavBar />
+    <Switch>
+      <Route exact path="/" component={Homepage} />
+      <Route path="/form" component={AddCocktailForm} />
+    </Switch>
+    </>
   );
 }
 
