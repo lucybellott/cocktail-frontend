@@ -4,14 +4,14 @@ import CocktailList from './CocktailList'
 import Search from './Search'
 
 
-function Homepage() {
+function Favorites() {
   const [drinks, setDrinks] = useState([])
   const [search, setSearch] = useState("");
   const [sorted, setSort] = useState(false)
-
-  document.title = "Home"
   
-  const searchCocktails = drinks.filter(drink => {
+  document.title = "Favorites"
+  
+    const searchCocktails = drinks.filter(drink => {
   
        let ingredientsArray = drink.ingredients.filter(ingredientString => {
          return ingredientString.toLowerCase().includes(search.toLowerCase()) 
@@ -24,7 +24,10 @@ function Homepage() {
   useEffect(() => {
     fetch('http://localhost:3000/drinks')
     .then(resp => resp.json())
-    .then(data => setDrinks(data))
+    .then(data => {
+        const favorited = data.filter(favDrink => favDrink.favorited === true)
+        setDrinks(favorited)
+    })
 
   }, [])
 
@@ -62,4 +65,4 @@ const handleSorting = () => {
   );
 }
 
-export default Homepage; 
+export default Favorites; 

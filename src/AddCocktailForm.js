@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 function AddCocktailForm() {
+
+  document.title = "Add a cocktail"
+
   let history = useHistory();
   const [formData, setFormData] = useState({
     name: "",
