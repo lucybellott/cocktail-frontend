@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  /* background-color: black; */
 }
 
 .App-logo {
@@ -54,4 +55,7 @@
 h1 {
   text-shadow: rgb(3, 3, 3) 4px 3px 5px;
   font-size: 4rem;
+  font-family: cursive;
+  font-weight: bolder;
+  
 }
